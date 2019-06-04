@@ -31,6 +31,12 @@ public class TADGrafo {
         this.nome = nome_mat;
     }
     
+    public TADGrafo(String nome_mat, int tam) {
+        this.mat = new int[tam][tam];
+        this.list_eliminados = new LinkedList<>();
+        this.nome = nome_mat;
+    }
+    
     public void printGrafo(){
         for(int i = primeiroVertice; i < ultimoVertice; i++){
             if(!list_eliminados.contains(i)){
@@ -51,7 +57,12 @@ public class TADGrafo {
     }
     
     public Vertex getVertex(String l){
-        return (Vertex) (dicVertex.findElement(l));
+        Vertex v = (Vertex) (dicVertex.findElement(l));
+        if(dicVertex.NO_SUCH_KEY()){
+            return null;
+        }else{
+            return v;
+        }
     }
     
     public Edge getEdge(String u, String v){
@@ -305,14 +316,21 @@ public class TADGrafo {
     }
     
     public Vertex insertVertex(String label, Object o){
-        Vertex v = geraVertex(label, o);
-        int idV = v.getID();
-        if(idV > ultimoVertice){
-            ultimoVertice = idV;
-        }
         
-        if(idV < primeiroVertice){
-            primeiroVertice = idV;
+        Vertex v =  getVertex(label);
+        if(v != null){
+            return null;
+        }else{
+            v = geraVertex(label, o);
+            int idV = v.getID();
+            if(idV > ultimoVertice){
+                ultimoVertice = idV;
+            }
+
+            if(idV < primeiroVertice){
+                primeiroVertice = idV;
+            }
+            quantVertices++;
         }
         
         return v;
