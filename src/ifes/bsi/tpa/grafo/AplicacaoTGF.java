@@ -20,6 +20,7 @@ public class AplicacaoTGF {
         String nome_arq = converte_arquivo("movies");
         System.out.println(nome_arq);
         TADGrafo g = carrega(nome_arq);
+        g.printGrafo();
     }
 
     public static String converte_arquivo(String nome_arq){
@@ -100,6 +101,7 @@ public class AplicacaoTGF {
         while((linha = arqIn.readline()) != null){
             if(linha.contains("#")){
                 troca = true;
+                continue;
             }
             if(!troca){
                 array_split = linha.split(" ");

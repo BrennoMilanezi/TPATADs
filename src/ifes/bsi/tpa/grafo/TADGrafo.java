@@ -22,8 +22,8 @@ public class TADGrafo {
     private int IDedge = 0;
     private int IDvertex = 0;
     private LinkedList<Integer> list_eliminados;
-    private TADDicChain dicVertex = null;
-    private TADDicChain dicEdge = null;
+    private TADDicChain dicVertex = new TADDicChain();
+    private TADDicChain dicEdge = new TADDicChain();
 
     public TADGrafo(String nome_mat) {
         this.mat = new int[16][16];
@@ -41,9 +41,10 @@ public class TADGrafo {
         for(int i = primeiroVertice; i < ultimoVertice; i++){
             if(!list_eliminados.contains(i)){
                 for(int k=primeiroVertice; k < ultimoVertice; k++){
-                    System.out.println(String.format("%4d", mat[i][k]));
+                    System.out.print(String.format("%04d", mat[i][k]));
+                    System.out.print(" ");
                 }
-                System.out.println();
+                System.out.println(" ");
             }
         }
     }
@@ -316,7 +317,6 @@ public class TADGrafo {
     }
     
     public Vertex insertVertex(String label, Object o){
-        
         Vertex v =  getVertex(label);
         if(v != null){
             return null;
