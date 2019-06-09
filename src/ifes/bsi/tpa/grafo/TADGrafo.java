@@ -352,7 +352,7 @@ public class TADGrafo {
             }
             
             if(ov.getID() == ultimoVertice){
-                for(int i=ultimoVertice-1; i >= primeiroVertice; i++){
+                for(int i=ultimoVertice-1; i >= primeiroVertice; i--){
                     if(!list_eliminados.contains(i)){
                         ultimoVertice = i;
                         break;
