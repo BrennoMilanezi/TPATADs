@@ -339,7 +339,7 @@ public class TADGrafo {
     public Vertex removeVertex(String v){
 
         Vertex ov =  getVertex(v);
-        if(!dicVertex.NO_SUCH_KEY()){
+        if(ov != null){
             list_eliminados.add(ov.getID());
             
             if(ov.getID() == primeiroVertice){
