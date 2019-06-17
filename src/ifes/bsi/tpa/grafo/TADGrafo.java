@@ -274,7 +274,12 @@ public class TADGrafo {
     }
     
     public Vertex geraVertex(String l, Object o){
-        int idVertex = IDvertex++;
+        if(!(list_eliminados.isEmpty())) {
+            int idVertex = list_eliminados.get(0);
+            list_eliminados.remove();
+        }else {
+            int idVertex = IDvertex++;
+        }
         Vertex v = new Vertex(idVertex, l, o);
         dicVertex.insertItem(l, v);
         return v;
