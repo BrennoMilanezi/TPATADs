@@ -154,8 +154,8 @@ public class TADGrafo {
         Vertex ov = getVertex(l);
         LinkedList<Edge> list = null;
         for(int j=primeiroVertice; j < ultimoVertice; j++){
-            if(mat[ov.getID()][j] != 0){
-                list.add(inToEdge(mat[ov.getID()][j]));
+            if(mat[j][[ov.getID()] != 0){
+                list.add(inToEdge(mat[j][ov.getID()]));
             }
         }
         return list;
@@ -166,7 +166,7 @@ public class TADGrafo {
         LinkedList<Edge> list = null;
         for(int j=primeiroVertice; j < ultimoVertice; j++){
             if(mat[j][ov.getID()] != 0){
-                list.add(inToEdge(mat[j][ov.getID()]));
+                list.add(inToEdge(mat[ov.getID()][j]));
             }
         }
         return list;
@@ -176,7 +176,7 @@ public class TADGrafo {
         Vertex ov = getVertex(l);
         LinkedList<Vertex> list = null;
         for(int j=primeiroVertice; j < ultimoVertice; j++){
-            if(mat[ov.getID()][j] != 0){
+            if(mat[j][ov.getID()] != 0){
                 list.add(inToVertex(j));
             }
         }
@@ -187,7 +187,7 @@ public class TADGrafo {
         Vertex ov = getVertex(l);
         LinkedList<Vertex> list = null;
         for(int j=primeiroVertice; j < ultimoVertice; j++){
-            if(mat[j][ov.getID()] != 0){
+            if(mat[ov.getID()][j] != 0){
                 list.add(inToVertex(j));
             }
         }
