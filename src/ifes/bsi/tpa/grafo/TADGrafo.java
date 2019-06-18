@@ -165,7 +165,7 @@ public class TADGrafo {
         Vertex ov = getVertex(l);
         LinkedList<Edge> list = null;
         for(int j=primeiroVertice; j < ultimoVertice; j++){
-            if(mat[j][ov.getID()] != 0){
+            if(mat[ov.getID()][j] != 0){
                 list.add(inToEdge(mat[ov.getID()][j]));
             }
         }
