@@ -25,7 +25,7 @@ public class ArquivoTxt {
     	}
     	else 
         	if(modo.toLowerCase().equals("rt") || modo.toLowerCase().equals("tr") || modo.toLowerCase().equals("r")){
-     	       try {
+                    try {
      	    	   ArquivoTxt arqtxt = new ArquivoTxt();
      	    	   arqtxt.fr = new FileReader(nome_arq);
      	    	   arqtxt.br = new BufferedReader(arqtxt.fr);
