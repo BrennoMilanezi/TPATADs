@@ -24,7 +24,17 @@ public class DSFloydW extends DataSet{
     
     @Override
     public int custo​(String origem, String destino){
-        return 1;
+        int linha = 0;
+        int coluna = 0;
+        for(int i = 0; i < lst_vet_label.length; i++){
+            if(lst_vet_label[i].equals(destino)){
+                linha = i;
+            }
+            if(lst_vet_label[i].equals(origem)){
+                coluna = i;
+            }
+        }
+        return mat_custos[linha][coluna];
     }
     
     @Override
