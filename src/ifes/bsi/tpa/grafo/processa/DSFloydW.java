@@ -29,6 +29,13 @@ public class DSFloydW extends DataSet{
     
     @Override
     public LinkedList<String> caminho​(String origem, String destino){
-        return new LinkedList<>();
+        LinkedList<String> caminho_min = new LinkedList<>();
+        for(int i = 0; i < lst_vet_label.length; i++){
+            caminho_min.add(lst_vet_label[i]);
+            if(lst_vet_label[i].equals(destino)){
+                break;
+            }
+        }
+        return caminho_min;
     }
 }
