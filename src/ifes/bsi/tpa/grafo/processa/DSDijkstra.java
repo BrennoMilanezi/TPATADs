@@ -28,6 +28,7 @@ public class DSDijkstra extends DataSet{
         for(int i = 0; i < vet_antecessores.length; i++){
             if(vet_antecessores[i].equals(destino)){
                 indice = i;
+                break;
             }
         }
         return vet_custos[indice];
